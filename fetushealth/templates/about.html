@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+
+
+
+<h2 class="text-danger bg-info" >&nbsp;About us</h2>
+
+<div class="container-fluid bg-primary"> 
+</div>
+
+<div class="container-fluid " id="details" style="background-color:honeydew;">
+
+    <h5 class="text-primary">Use this app to get health status of fetus</h5>
+
+<p>
+In this project, we will be predicting fetus health in early stage.
+</p>
+</div>
+<style>
+img{
+width:300px;
+height:300px;
+}
+</style>
+
+<div class="container">
+
+	<div class="row">
+    <div class="col-sm">
+     <img   src="{{url_for('static',filename='newfetus.png')}}" />
+    </div>
+    
+
+
+</div>
+{% endblock %}

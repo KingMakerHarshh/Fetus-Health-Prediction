@@ -1,0 +1,109 @@
+{% extends "base1.html" %} 
+
+
+{% block content %}
+
+
+<body style="background-color:lightblue; background-size:cover; background-repeat: no-repeat; background-size: 1500px 800px;">
+
+    <div class="col-md-12" style="background-color:lightblue;">
+    
+        <h2>Fetus Health Prediction Form</h2>
+        <form name="f1" action="/fetus" method="post" >
+            <table class="table">
+
+                <tr>
+                    <th>Fetal movement</th>
+                    <th>Baseline value</th>
+                    <th>Uterine contrations</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" required name="fem">
+                    </td>
+                    <td>
+                        <input type="text" required name="baseline">
+                    </td>
+                    <td>
+                        <input type="text" required name="uc">
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <th>Accelerations</th>
+                    <th>Prolongued decelerations</th>
+                    <th>Abnormal short term variability</th>
+                   
+                </tr>
+                
+                <tr>
+                    <td>
+                        <input type="text" required name="acc">
+                    </td>
+                    <td>
+                        <input type="text" required name="pd">
+                    </td>
+                    <td>
+                        <input type="text" required name="astv">
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <th>Percentage of time with <br/>abnormal long term variability</th>
+                    <th>Histogram mode</th>
+                    <th>Histogram mean</th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="text" required name="pot">
+                    </td>
+                    <td>
+                        <input type="text" required name="hm">
+                    </td>
+                    <td>
+                        <input type="text" required name="hmean">
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <th>Histogram_median </th>
+                    <th colspan="2">Histogram variance</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="text" required name="hmedian">
+                    </td>
+                    <td >
+                        <input type="text" required name="hvariance">
+                    </td>
+                    <td>
+                            <input type="submit" value="Predict" class="btn btn-primary btn-lg">
+                    </td>
+                    
+                </tr>
+            </table>
+        </form>
+        {% if result: %}
+        
+        <h1 class="text-primary">{{result}}</h1>
+        <h2>Accuracy model</h2>
+        <img src="/static/bar.png" alt=""><br>
+        <h2>K-Nearest Neighbors</h2>
+        <img src="/static/MODEL1.png" alt=""><br>
+        <h2>NaiveBayes</h2>
+        <img src="/static/MODEL2.png" alt=""><br>
+        <h2>Decision Tree</h2>
+        <img src="/static/MODEL3.png" alt=""><br>
+
+        <h3>Accuracy model: Decision tree <br> Accuracy percentage:95%</h3>
+
+        {% endif %}
+    </div>	
+    </body>
+    {% endblock %}
+     
